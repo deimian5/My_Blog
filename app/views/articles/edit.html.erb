@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+
+<body>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('/images/post-bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1><%= @article.title %></h1>
+                        <h2 class="subheading">Editar articulo</h2>
+                        <span class="meta">Posteado por: <a href="#">Start Bootstrap</a> on August 24, 2014</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+					<%= form_for :article, url: article_path(@article), method: :patch do |f| %>
+					 
+					  <% if @article.errors.any? %>
+					    <div id="error_explanation">
+					      <h2>
+					        <%= pluralize(@article.errors.count, "error") %> prohibited
+					        this article from being saved:
+					      </h2>
+					      <ul>
+					        <% @article.errors.full_messages.each do |msg| %>
+					          <li><%= msg %></li>
+					        <% end %>
+					      </ul>
+					    </div>
+					  <% end %>
+					 
+					  <p>
+					    <%= f.label :title %><br>
+					    <%= f.text_field :title, :class=>"form-control" %>
+					  </p>
+					 
+					  <p>
+					    <%= f.label :text %><br>
+					    <%= f.text_area :text, :class=>"form-control" %>
+					  </p>
+					 
+					  <p>
+					    <%= f.submit :class=>"btn btn-default" %>
+					  </p>
+					 
+					<% end %>
+					 
+					<%= link_to 'Back', articles_path %>
+
+				</div>
+            </div>
+        </div>
+    </article>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; Your Website 2014</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/clean-blog.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+//@extend-elements
+//original selectors
+//.intro-header .site-heading .subheading, .intro-header .page-heading .subheading
+%extend_1 {
+	font-size: 24px;
+	line-height: 1.1;
+	display: block;
+	font-family: $font_3, $font_4, $font_5, $font_6, $font_7;
+	font-weight: 300;
+	margin: 10px 0 0;
+}
+
+//original selectors
+//.floating-label-form-group input, .floating-label-form-group textarea
+%extend_2 {
+	z-index: 1;
+	position: relative;
+	padding-right: 0;
+	padding-left: 0;
+	border: none;
+	//Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
+	border-radius: 0;
+	font-size: 1.5em;
+	background: none;
+	//Instead of the line below you could use @includebox-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	box-shadow: none !important;
+	resize: none;
+}
+
+//original selectors
+//.btn-default:hover, .btn-default:focus
+%extend_3 {
+	background-color: $color_deep_cerulean_approx;
+	border: 1px solid $color_deep_cerulean_approx;
+	color: $white;
+}
+
+//original selectors
+//.pager li > a, .pager li > span
+%extend_4 {
+	font-family: $font_3, $font_4, $font_5, $font_6, $font_7;
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 800;
+	letter-spacing: 1px;
+	padding: 15px 25px;
+	background-color: $white;
+	//Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
+	border-radius: 0;
+}
+
+//original selectors
+//.pager li > a:hover, .pager li > a:focus
+%extend_5 {
+	color: $white;
+	background-color: $color_deep_cerulean_approx;
+	border: 1px solid $color_deep_cerulean_approx;
+}
+
+//original selectors
+//.pager .disabled > a, .pager .disabled > a:hover, .pager .disabled > a:focus, .pager .disabled > span
+%extend_6 {
+	color: $gray;
+	background-color: $color_cape_cod_approx;
+	cursor: not-allowed;
+}
