@@ -8,6 +8,7 @@ class ArticlesController < ApplicationController
 
   def show
       @article = Article.find(params[:id])
+      #@article = Article.find_each(&:save)
   end
 
 	def new
